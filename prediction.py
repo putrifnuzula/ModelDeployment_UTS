@@ -1,7 +1,7 @@
 import streamlit as st
 import joblib
 import numpy as np
-
+import xgboost
 # Read the machine learning model 
 model = joblib.load('XGB_model.pkl')
 
@@ -20,7 +20,7 @@ def main():
     NumOfProducts = st.number_input('Number of Purchased Products', 1, 4)
     HasCrCard = st.selectbox('Have a Credit Card', [0,1])
     IsActiveMember = st.radio('Is an Active Member', ['0' ,'1'])
-    EstimatedSalary = st.radio('Salary', ['11.58', '199992.48'])
+    EstimatedSalary = st.slider('Salary', ['11.58', '199992.48'])
 
     if st.button('Make Prediction'):
         features = [CreditScore, Geography, Gender, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary]
