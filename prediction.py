@@ -26,7 +26,7 @@ def main():
 
     if st.button('Make Prediction'):
         features = [CreditScore, Geography, Gender, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary]
-        ft = feat_list = np.array(features, dtype=object)
+        # ft = feat_list = np.array(features, dtype=object)
         result = make_prediction(ft)
         st.success(f'The prediction is: {result}')
 
