@@ -14,7 +14,7 @@ def main():
 
     # Add user input components for 10 features
     CreditScore = st.slider('Credit Score', 350.0, 850.0)
-    Geography = st.radio('Country', ['0', '1', '2'])
+    Geography = st.radio('Country', ['France', 'Germany', 'Spain'])
     Gender = st.selectbox('Gender', [0,1])
     Age = st.number_input('Age', 18.0,92.0)
     Tenure = st.number_input("Duration of your bank account (in years)", 0,10)
