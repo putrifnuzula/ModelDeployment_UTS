@@ -2,8 +2,10 @@ import streamlit as st
 import joblib
 import numpy as np
 import xgboost
+import pickle
 # Read the machine learning model 
-model = joblib.load('XGB_model.pkl')
+# model = joblib.load('XGB_model.pkl')
+model = pickle.load(open('XGB_model.pkl', "rb"))
 
 
 
@@ -25,7 +27,7 @@ def main():
     if st.button('Make Prediction'):
         features = [CreditScore, Geography, Gender, Age, Tenure, Balance, NumOfProducts, HasCrCard, IsActiveMember, EstimatedSalary]
         ft = feat_list = np.array(features, dtype=object)
-        result = make_prediction(features)
+        result = make_prediction(ft)
         st.success(f'The prediction is: {result}')
 
 
